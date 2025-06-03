@@ -20,7 +20,7 @@ const TodoSlice = createSlice({
     },
     toggleTodo: (state, action) => {
       const todo = state.find((todo) => todo.id == action.payload);
-      if (todo) todo.completed = true;
+      if (todo) todo.completed = !todo.completed;
     },
   },
 });
