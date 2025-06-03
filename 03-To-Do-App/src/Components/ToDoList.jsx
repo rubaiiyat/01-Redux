@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, removeTodo } from "../Features/Todo/TodoSlice";
+import { addTodo, removeTodo, toggleTodo } from "../Features/Todo/TodoSlice";
 
 const ToDoList = () => {
   const todos = useSelector((state) => state.todos);
@@ -12,6 +12,7 @@ const ToDoList = () => {
     const todoInput = form.todoInput.value;
     console.log(todoInput);
     disPatch(addTodo(todoInput));
+    form.reset();
   };
 
   return (
@@ -33,8 +34,13 @@ const ToDoList = () => {
             {todos.length > 0 ? (
               todos.map((todo) => (
                 <li
+                  onClick={() => disPatch(toggleTodo(todo.id))}
                   key={todo.id}
-                  className="flex justify-between items-center  w-96 bg-base-100 p-4 rounded mb-2 shadow"
+                  className={
+                    todo.completed == true
+                      ? "flex justify-between items-center w-96 bg-base-300 p-4 rounded mb-2 shadow hover:cursor-pointer"
+                      : "flex justify-between items-center w-96 bg-base-100 p-4 rounded mb-2 shadow hover:cursor-pointer"
+                  }
                 >
                   <span className="text-start">
                     {todo.id}. {todo.text}
