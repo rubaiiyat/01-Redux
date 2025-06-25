@@ -1,9 +1,10 @@
 import "./App.css";
+import Weather from "./Components/Weather/Weather";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-4xl">Hello World</h1>
+    <div className=" w-full h-full">
+      <Weather></Weather>
     </div>
   );
 }
