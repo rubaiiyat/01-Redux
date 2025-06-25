@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import React from "react";
+import weatherReducer from "../Redux/Features/Weather/WeatherSlice";
+import { thunk } from "redux-thunk";
 
 const Store = configureStore({
-  reducer: {},
+  reducer: {
+    weather: weatherReducer,
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
 });
 
 export default Store;
