@@ -1,13 +1,18 @@
-import Navbar from "daisyui/components/navbar";
 import "./App.css";
 import { Outlet } from "react-router";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
-    <div>
-      <nav>Navbar</nav>
-      <main>
-        <Outlet></Outlet>
+    <div className="">
+      <div className="">
+        <div className="">
+          <Navbar />
+        </div>
+      </div>
+
+      <main className="">
+        <Outlet />
       </main>
     </div>
   );
