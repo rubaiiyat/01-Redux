@@ -5,9 +5,10 @@ import App from "./App.jsx";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./Components/Pages/Home.jsx";
 import { Provider } from "react-redux";
+import Store from "./Redux/Store/Store.js";
 
 createRoot(document.getElementById("root")).render(
-  <Provider>
+  <Provider store={Store}>
     <BrowserRouter>
       <Routes>
         <Route element={<App></App>}>
