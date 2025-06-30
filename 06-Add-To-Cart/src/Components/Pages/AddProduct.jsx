@@ -1,13 +1,30 @@
-import React from "react";
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { addToProduct } from "../../Redux/Features/ProductSlice";
 
 const AddProduct = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const dispatch = useDispatch();
+  const onSubmit = (data) => dispatch(addToProduct(data));
+
+  console.log(watch("example"));
+
   return (
     <div className="max-w-lg mx-auto px-6 py-10 md:-mt-14 md:fixed">
       <h1 className="text-2xl font-bold text-center mb-5 text-info">
         Add New Product
       </h1>
 
-      <form className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-base-200 p-8 rounded-xl shadow-lg">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-base-200 p-8 rounded-xl shadow-lg"
+      >
         {/* Product Name */}
         <div className="form-control">
           <label className="label">
@@ -15,6 +32,8 @@ const AddProduct = () => {
           </label>
           <input
             type="text"
+            name="name"
+            {...register("name", { required: true })}
             placeholder="Enter product name"
             className="input input-bordered bg-base-100 focus:border-info focus:ring-info transition duration-300"
             required
@@ -27,6 +46,8 @@ const AddProduct = () => {
             <span className="label-text ">Image URL</span>
           </label>
           <input
+            name="img"
+            {...register("img", { required: true })}
             type="url"
             placeholder="Paste image link"
             className="input input-bordered bg-base-100 focus:border-info focus:ring-info transition duration-300"
@@ -40,6 +61,8 @@ const AddProduct = () => {
             <span className="label-text ">Short Description (8–10 words)</span>
           </label>
           <input
+            name="description"
+            {...register("description", { required: true })}
             type="text"
             placeholder="A modern ceramic plate for elegant meals"
             className="input input-bordered bg-base-100 focus:border-info focus:ring-info transition duration-300"
@@ -54,6 +77,8 @@ const AddProduct = () => {
             <span className="label-text ">Price ($)</span>
           </label>
           <input
+            name="price"
+            {...register("price", { required: true })}
             type="number"
             placeholder="e.g. 49.99"
             className="input input-bordered bg-base-100 focus:border-info focus:ring-info transition duration-300"
@@ -69,6 +94,8 @@ const AddProduct = () => {
             <span className="label-text ">Category</span>
           </label>
           <select
+            name="category"
+            {...register("category", { required: true })}
             className="select select-bordered bg-base-100 focus:border-info focus:ring-info transition duration-300"
             required
             defaultValue=""
@@ -90,6 +117,8 @@ const AddProduct = () => {
             <span className="label-text ">Date</span>
           </label>
           <input
+            name="date"
+            {...register("date", { required: true })}
             type="date"
             className="input input-bordered bg-base-100 focus:border-info focus:ring-info transition duration-300"
             required
@@ -102,7 +131,7 @@ const AddProduct = () => {
             type="submit"
             className="btn btn-info w-full text-lg  tracking-wide hover:brightness-110 transition duration-300"
           >
-            Submit Product
+            Add Product
           </button>
         </div>
       </form>

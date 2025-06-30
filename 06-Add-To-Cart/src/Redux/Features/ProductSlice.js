@@ -8,12 +8,12 @@ const initialState = [
     description:
       "Black Fujifilm DSLR Camera with sharp image quality and sleek design.",
     price: "200",
-    category: "Camera",
+    category: "Electronics",
     date: "Unavailable",
   },
   {
     id: 2,
-    name: "Pink Lipstick and Blush-On",
+    name: "Makeup",
     img: "https://images.pexels.com/photos/2533266/pexels-photo-2533266.jpeg",
     description:
       "Pink Lipstick and Blush-On for a soft, radiant, and natural makeup look.",
@@ -28,7 +28,7 @@ const initialState = [
     description:
       "Four Venus Eye Makeup set for bold, vibrant, and captivating eye looks.",
     price: "100",
-    category: "Beauty & Personal Care",
+    category: "Makeup",
     date: "Unavailable",
   },
   {
