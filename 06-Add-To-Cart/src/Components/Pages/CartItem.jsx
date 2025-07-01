@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import {
   decreaseQuantity,
   increaseQuantity,
+  removeProduct,
 } from "../../Redux/Features/CartSlice";
 
 const CartItem = ({ cart }) => {
@@ -17,6 +18,10 @@ const CartItem = ({ cart }) => {
   const decreaseHandler = () => {
     dispatch(decreaseQuantity(id));
     console.log("Working");
+  };
+
+  const handleRemove = () => {
+    dispatch(removeProduct(id));
   };
   return (
     <section className="">
@@ -120,6 +125,7 @@ const CartItem = ({ cart }) => {
                       </button>
 
                       <button
+                        onClick={handleRemove}
                         type="button"
                         className="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500"
                       >
