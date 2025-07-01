@@ -1,12 +1,21 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+} from "../../Redux/Features/CartSlice";
 
 const CartItem = ({ cart }) => {
   const { id, name, img, price, quantity } = cart;
 
+  const dispatch = useDispatch();
+
   const increaseHandler = () => {
+    dispatch(increaseQuantity(id));
     console.log("Working");
   };
   const decreaseHandler = () => {
+    dispatch(decreaseQuantity(id));
     console.log("Working");
   };
   return (
@@ -49,7 +58,7 @@ const CartItem = ({ cart }) => {
                       </button>
                       <input
                         type="text"
-                        defaultValue={quantity}
+                        value={quantity}
                         className="w-10 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none dark:text-white"
                       />
                       <button
@@ -75,7 +84,7 @@ const CartItem = ({ cart }) => {
                     </div>
                     <div className="text-end md:order-4 md:w-32">
                       <p className="text-base font-bold text-gray-900 dark:text-white">
-                        ${price}
+                        ${price * quantity}
                       </p>
                     </div>
                   </div>
