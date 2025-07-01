@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { addToProduct } from "../../Redux/Features/ProductSlice";
+import { addToCart } from "../../Redux/Features/CartSlice";
 
 const AddProduct = () => {
   const {

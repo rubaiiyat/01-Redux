@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import ProductsCard from "./ProductsCard";
 import AddProduct from "./AddProduct";
-
 const Home = () => {
   const products = useSelector((state) => state.products);
   console.log(products);
