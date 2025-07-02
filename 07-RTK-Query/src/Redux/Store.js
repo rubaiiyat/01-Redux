@@ -1,8 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import React from "react";
+import postApi from "./Features/Post/postApi";
 
 const Store = configureStore({
-  reducer: {},
+  reducer: {
+    [postApi.reducerPath]: postApi.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(postApi.middleware),
 });
 
 export default Store;
