@@ -9,6 +9,9 @@ const postApi = createApi({
     getAllPost: builder.query({
       query: () => `posts`,
     }),
+    getPostId: builder.query({
+      query: (id) => `/posts/${id}`,
+    }),
   }),
 });
 
