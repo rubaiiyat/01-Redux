@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { useGetPostIdQuery } from "../Redux/Features/Post/postApi";
 
 const SinglePost = () => {
@@ -18,6 +18,9 @@ const SinglePost = () => {
           <p>{data.body}</p>
           <div className="card-actions justify-center">
             <button className="btn btn-primary">Like It</button>
+            <Link to={"/"} className="btn btn-secondary">
+              Back Home
+            </Link>
           </div>
         </div>
       </div>
