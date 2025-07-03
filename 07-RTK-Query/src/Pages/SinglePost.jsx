@@ -1,9 +1,26 @@
 import React from "react";
+import { useParams } from "react-router";
+import { useGetPostIdQuery } from "../Redux/Features/Post/postApi";
 
 const SinglePost = () => {
+  const { id } = useParams();
+
+  const { data, isLoading, error } = useGetPostIdQuery(id);
+
+  if (error) return <div>Something Went Wrong</div>;
+
+  if (isLoading) return <div>Loading.......</div>;
   return (
     <div>
-      <h1>This is Single Post page</h1>
+      <div className="card bg-base-100 w-96 shadow-sm mx-auto mt-10">
+        <div className="card-body">
+          <h2 className="card-title">{data.title}</h2>
+          <p>{data.body}</p>
+          <div className="card-actions justify-center">
+            <button className="btn btn-primary">Like It</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

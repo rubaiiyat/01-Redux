@@ -15,5 +15,5 @@ const postApi = createApi({
   }),
 });
 
-export const { useGetAllPostQuery } = postApi;
+export const { useGetAllPostQuery, useGetPostIdQuery } = postApi;
 export default postApi;
