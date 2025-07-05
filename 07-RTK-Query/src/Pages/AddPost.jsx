@@ -1,6 +1,9 @@
 import React from "react";
+import { useAddNewPostMutation } from "../Redux/Features/Post/postApi";
 
 const AddPost = () => {
+  const [addNewPost] = useAddNewPostMutation();
+  console.log(addNewPost);
   const handleAddPostForm = (e) => {
     e.preventDefault();
 
@@ -14,7 +17,7 @@ const AddPost = () => {
       description,
       authorID,
     };
-    console.log(newPost);
+    addNewPost(newPost);
   };
   return (
     <div className="min-h-screen bg-base-100 flex items-center justify-center px-4">
