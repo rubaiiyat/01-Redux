@@ -1,9 +1,27 @@
 import React from "react";
 
 const AddPost = () => {
+  const handleAddPostForm = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const title = form.title.value;
+    const description = form.description.value;
+    const authorID = form.authorID.value;
+
+    const newPost = {
+      title,
+      description,
+      authorID,
+    };
+    console.log(newPost);
+  };
   return (
     <div className="min-h-screen bg-base-100 flex items-center justify-center px-4">
-      <form className="card w-full max-w-md bg-base-200 shadow-xl p-6 space-y-4">
+      <form
+        onSubmit={handleAddPostForm}
+        className="card w-full max-w-md bg-base-200 shadow-xl p-6 space-y-4"
+      >
         <h2 className="text-2xl font-bold text-center text-primary">
           Add Post
         </h2>
