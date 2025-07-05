@@ -7,6 +7,7 @@ import Store from "./Redux/Store.js";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./Pages/Home.jsx";
 import SinglePost from "./Pages/SinglePost.jsx";
+import AddPost from "./Pages/AddPost.jsx";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={Store}>
@@ -15,6 +16,7 @@ createRoot(document.getElementById("root")).render(
         <Route element={<App></App>}>
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/posts/:id" element={<SinglePost></SinglePost>}></Route>
+          <Route path="add-post" element={<AddPost></AddPost>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
