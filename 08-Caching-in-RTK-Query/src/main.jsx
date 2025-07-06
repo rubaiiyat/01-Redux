@@ -11,6 +11,7 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route element={<App></App>}>
           <Route path="/" element={<div>RTK ADVANCED TOPIC</div>}></Route>
+          <Route path="/users" element={<div>Users</div>}></Route>
           <Route path="/add-user" element={<div>Add User</div>}></Route>
           <Route path="/edit-user" element={<div>Edit User</div>}></Route>
         </Route>
