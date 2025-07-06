@@ -8,9 +8,9 @@ const Home = () => {
   if (error) return <div>Something went wrong</div>;
   if (isLoading) return <div>Loading........</div>;
   return (
-    <div>
-      <ul>
-        {data.map((post) => (
+    <div className="bg-base-200 w-6/12 mx-auto p-5 mt-20">
+      <ul className="">
+        {data.slice(0, 10).map((post) => (
           <li key={post.id} className="text-blue-400">
             <Link to={`/posts/${post.id}`}>
               {post.id}. {post.title}
