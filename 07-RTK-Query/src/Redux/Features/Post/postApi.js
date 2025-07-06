@@ -22,7 +22,7 @@ const postApi = createApi({
 
     deletePostById: builder.mutation({
       query: (id) => ({
-        url: `post/${id}`,
+        url: `posts/${id}`,
         method: "DELETE",
       }),
     }),

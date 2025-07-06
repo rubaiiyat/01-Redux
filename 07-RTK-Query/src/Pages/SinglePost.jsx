@@ -1,15 +1,24 @@
 import React from "react";
 import { Link, useParams } from "react-router";
-import { useGetPostIdQuery } from "../Redux/Features/Post/postApi";
+import {
+  useDeletePostByIdMutation,
+  useGetPostIdQuery,
+} from "../Redux/Features/Post/postApi";
 
 const SinglePost = () => {
   const { id } = useParams();
+  const [deletePostById] = useDeletePostByIdMutation();
 
   const { data, isLoading, error } = useGetPostIdQuery(id);
 
   if (error) return <div>Something Went Wrong</div>;
 
   if (isLoading) return <div>Loading.......</div>;
+
+  const handleDeletePost = (v) => {
+    const response = deletePostById(id);
+    console.log(response);
+  };
   return (
     <div>
       <div className="card bg-base-100 w-96 shadow-sm mx-auto mt-10">
@@ -21,6 +30,9 @@ const SinglePost = () => {
             <Link to={"/"} className="btn btn-secondary">
               Back Home
             </Link>
+            <button onClick={handleDeletePost} className="btn btn-error">
+              Delete
+            </button>
           </div>
         </div>
       </div>
