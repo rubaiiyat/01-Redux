@@ -48,6 +48,51 @@
       "gender": "male",
       "city": "Beijing",
       "isActive": false
+    },
+    {
+      "id": "6",
+      "name": "Emma Johnson",
+      "username": "emma_j",
+      "mail": "emma.johnson@example.com",
+      "gender": "female",
+      "city": "Chicago",
+      "isActive": true
+    },
+    {
+      "id": "7",
+      "name": "Carlos Ramirez",
+      "username": "carlosr",
+      "mail": "carlos.ramirez@example.com",
+      "gender": "male",
+      "city": "Mexico City",
+      "isActive": false
+    },
+    {
+      "id": "8",
+      "name": "Amina Yusuf",
+      "username": "aminay",
+      "mail": "amina.yusuf@example.com",
+      "gender": "female",
+      "city": "Lagos",
+      "isActive": true
+    },
+    {
+      "id": "9",
+      "name": "Liam Müller",
+      "username": "liam_m",
+      "mail": "liam.muller@example.com",
+      "gender": "male",
+      "city": "Berlin",
+      "isActive": true
+    },
+    {
+      "id": "10",
+      "name": "Sakura Tanaka",
+      "username": "sakuratanaka",
+      "mail": "sakura.tanaka@example.com",
+      "gender": "female",
+      "city": "Tokyo",
+      "isActive": false
     }
   ],
   "comments": [
