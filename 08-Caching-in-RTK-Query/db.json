@@ -1,0 +1,60 @@
+{
+  "posts": [
+    { "id": "1", "title": "a title", "views": 100 },
+    { "id": "2", "title": "another title", "views": 200 }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "username": "johndoe",
+      "mail": "john.doe@example.com",
+      "gender": "male",
+      "city": "New York",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "username": "janesmith",
+      "mail": "jane.smith@example.com",
+      "gender": "female",
+      "city": "Los Angeles",
+      "isActive": false
+    },
+    {
+      "id": "3",
+      "name": "Ali Khan",
+      "username": "alikhan92",
+      "mail": "ali.khan@example.com",
+      "gender": "male",
+      "city": "Karachi",
+      "isActive": true
+    },
+    {
+      "id": "4",
+      "name": "Maya Patel",
+      "username": "maya_patel",
+      "mail": "maya.patel@example.com",
+      "gender": "female",
+      "city": "Mumbai",
+      "isActive": true
+    },
+    {
+      "id": "5",
+      "name": "Chen Wei",
+      "username": "chenwei88",
+      "mail": "chen.wei@example.com",
+      "gender": "male",
+      "city": "Beijing",
+      "isActive": false
+    }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
