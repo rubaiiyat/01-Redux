@@ -1,13 +1,19 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 
 const AddNewUser = () => {
-  const handleForm = (e) => {
-    e.preventDefault();
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => console.log(data);
+
   return (
     <div className="bg-base-100 flex items-center justify-center mt-5">
       <form
-        onSubmit={handleForm}
+        onSubmit={handleSubmit(onSubmit)}
         className="card w-full max-w-md bg-base-200 shadow-xl p-6 space-y-4"
       >
         <h2 className="text-2xl font-bold text-center text-primary">
@@ -22,6 +28,7 @@ const AddNewUser = () => {
             name="username"
             type="text"
             placeholder="Enter username"
+            {...register("username", { required: true })}
             className="input input-bordered w-full bg-base-100 text-base-content"
           />
         </div>
@@ -34,6 +41,7 @@ const AddNewUser = () => {
             name="fullName"
             type="text"
             placeholder="Enter full name"
+            {...register("fullName", { required: true })}
             className="input input-bordered w-full bg-base-100 text-base-content"
           />
         </div>
@@ -46,6 +54,7 @@ const AddNewUser = () => {
             name="email"
             type="email"
             placeholder="Enter email"
+            {...register("email", { required: true })}
             className="input input-bordered w-full bg-base-100 text-base-content"
           />
         </div>
@@ -56,9 +65,10 @@ const AddNewUser = () => {
           </label>
           <select
             name="gender"
+            {...register("gender", { required: true })}
             className="select select-bordered w-full bg-base-100 text-base-content"
           >
-            <option disabled selected>
+            <option disabled value="">
               Select gender
             </option>
             <option>Male</option>
@@ -75,6 +85,7 @@ const AddNewUser = () => {
             name="city"
             type="text"
             placeholder="Enter city"
+            {...register("city", { required: true })}
             className="input input-bordered w-full bg-base-100 text-base-content"
           />
         </div>
