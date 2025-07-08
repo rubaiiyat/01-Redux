@@ -1,7 +1,20 @@
 import React from "react";
+import { useDeleteUserMutation } from "../../Redux/Features/User/UserApi";
 
 const Users = ({ user }) => {
   const { id, name, username, mail, gender, city, isActive } = user;
+
+  const [deleteUser] = useDeleteUserMutation();
+
+  const handleDeleteUser = async (id) => {
+    try {
+      await deleteUser(id);
+      alert("Delete User Successfully");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <div className="space-y-2 bg-base-200 p-5 rounded m-5 shadow-xl">
@@ -25,6 +38,16 @@ const Users = ({ user }) => {
         <h1>
           City: <span className="text-info">{city}</span>
         </h1>
+
+        <div className="flex justify-between mt-3">
+          <button
+            onClick={() => handleDeleteUser(id)}
+            className="btn btn-error"
+          >
+            Delete Post
+          </button>
+          <button className="btn btn-info">Update Post</button>
+        </div>
       </div>
     </div>
   );

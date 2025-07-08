@@ -22,15 +22,6 @@
       "isActive": true
     },
     {
-      "id": "2",
-      "name": "Jane Smith",
-      "username": "janesmith",
-      "mail": "jane.smith@example.com",
-      "gender": "female",
-      "city": "Los Angeles",
-      "isActive": false
-    },
-    {
       "id": "3",
       "name": "Ali Khan",
       "username": "alikhan92",
@@ -101,22 +92,6 @@
       "gender": "female",
       "city": "Tokyo",
       "isActive": false
-    },
-    {
-      "id": "6f01",
-      "username": "rubaiyat",
-      "name": "Abir Rubaiyat",
-      "mail": "abirr1516@gmail.com",
-      "gender": "Male",
-      "city": "Bogra"
-    },
-    {
-      "id": "8f5a",
-      "username": "kojitod212",
-      "name": "Koji Tod",
-      "mail": "kojitod212@gmail.com",
-      "gender": "Female",
-      "city": "Dhaka"
     }
   ],
   "comments": [
