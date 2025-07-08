@@ -1,7 +1,15 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
   ],
   "users": [
     {
@@ -93,11 +101,35 @@
       "gender": "female",
       "city": "Tokyo",
       "isActive": false
+    },
+    {
+      "id": "6f01",
+      "username": "rubaiyat",
+      "name": "Abir Rubaiyat",
+      "mail": "abirr1516@gmail.com",
+      "gender": "Male",
+      "city": "Bogra"
+    },
+    {
+      "id": "8f5a",
+      "username": "kojitod212",
+      "name": "Koji Tod",
+      "mail": "kojitod212@gmail.com",
+      "gender": "Female",
+      "city": "Dhaka"
     }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
   "profile": {
     "name": "typicode"

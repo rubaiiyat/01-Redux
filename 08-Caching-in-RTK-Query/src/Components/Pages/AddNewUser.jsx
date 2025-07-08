@@ -1,14 +1,28 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
+import { useNavigate } from "react-router";
+import { useAddNewUserMutation } from "../../Redux/Features/User/UserApi";
+
 const AddNewUser = () => {
+  const [addNewUser] = useAddNewUserMutation();
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      await addNewUser(data);
+      alert("User Added Successfully");
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="bg-base-100 flex items-center justify-center mt-5">
@@ -38,10 +52,10 @@ const AddNewUser = () => {
             <span className="label-text text-base-content">Full Name</span>
           </label>
           <input
-            name="fullName"
+            name="name"
             type="text"
             placeholder="Enter full name"
-            {...register("fullName", { required: true })}
+            {...register("name", { required: true })}
             className="input input-bordered w-full bg-base-100 text-base-content"
           />
         </div>
@@ -54,7 +68,7 @@ const AddNewUser = () => {
             name="email"
             type="email"
             placeholder="Enter email"
-            {...register("email", { required: true })}
+            {...register("mail", { required: true })}
             className="input input-bordered w-full bg-base-100 text-base-content"
           />
         </div>
