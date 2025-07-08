@@ -23,11 +23,11 @@
     },
     {
       "id": "3",
-      "name": "Ali Khan",
-      "username": "alikhan92",
-      "mail": "ali.khan@example.com",
+      "name": "Abir Khan",
+      "username": "abir",
+      "mail": "abirkhan@gmail.com",
       "gender": "male",
-      "city": "Karachi",
+      "city": "Dhaka",
       "isActive": true
     },
     {

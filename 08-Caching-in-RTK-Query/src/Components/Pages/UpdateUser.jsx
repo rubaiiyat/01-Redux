@@ -1,6 +1,9 @@
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router";
-import { useGetUserByIdQuery } from "../../Redux/Features/User/UserApi";
+import {
+  useGetUserByIdQuery,
+  useUpdateUserByIdMutation,
+} from "../../Redux/Features/User/UserApi";
 import Loading from "./Loading";
 import { useEffect } from "react";
 
@@ -8,6 +11,7 @@ const UpdateUser = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { data: user = {}, isLoading, error } = useGetUserByIdQuery(id);
+  const [updateUserById] = useUpdateUserByIdMutation();
 
   const {
     register,
@@ -21,18 +25,19 @@ const UpdateUser = () => {
     reset.called = true;
   }
 
-  if (isLoading) return <Loading></Loading>;
-
-  if (error) return <div>{error.message}</div>;
-
   const onSubmit = async (data) => {
     try {
-      alert("User Added Successfully");
+      await updateUserById({ id, ...data });
+      alert("User Updated Successfully");
       navigate("/");
     } catch (error) {
       console.log(error);
     }
   };
+
+  if (isLoading) return <Loading></Loading>;
+
+  if (error) return <div>{error.message}</div>;
   return (
     <div className="bg-base-100 flex items-center justify-center mt-5">
       <form
