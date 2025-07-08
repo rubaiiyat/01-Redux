@@ -1,5 +1,6 @@
 import React from "react";
 import { useDeleteUserMutation } from "../../Redux/Features/User/UserApi";
+import { Link } from "react-router";
 
 const Users = ({ user }) => {
   const { id, name, username, mail, gender, city, isActive } = user;
@@ -46,7 +47,9 @@ const Users = ({ user }) => {
           >
             Delete Post
           </button>
-          <button className="btn btn-info">Update Post</button>
+          <Link to={`/update-user/${id}`}>
+            <button className="btn btn-info">Update Post</button>
+          </Link>
         </div>
       </div>
     </div>
